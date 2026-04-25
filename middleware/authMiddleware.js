@@ -7,7 +7,7 @@ export const authMiddleware = (req, res, next) => {
     return res.status(401).json({ message: "No token" });
   }
 
-  const token = header.split(" ")[1]; // 👈 IMPORTANT
+  const token = header.split(" ")[1];
 
   try {
     const verified = jwt.verify(token, process.env.JWT_SECRET);
